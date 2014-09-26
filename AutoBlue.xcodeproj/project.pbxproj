@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9C5535D19D5313A004C1529 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5535C19D5313A004C1529 /* main.m */; };
+		B9C5536019D5313A004C1529 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5535F19D5313A004C1529 /* AppDelegate.m */; };
+		B9C5536219D5313A004C1529 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9C5536119D5313A004C1529 /* Images.xcassets */; };
+		B9C5536519D5313A004C1529 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C5536319D5313A004C1529 /* MainMenu.xib */; };
+		B9C5537119D5313A004C1529 /* AutoBlueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5537019D5313A004C1529 /* AutoBlueTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9C5536B19D5313A004C1529 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9C5534F19D5313A004C1529 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9C5535619D5313A004C1529;
+			remoteInfo = AutoBlue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B9C5535719D5313A004C1529 /* AutoBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9C5535B19D5313A004C1529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9C5535C19D5313A004C1529 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B9C5535E19D5313A004C1529 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B9C5535F19D5313A004C1529 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B9C5536119D5313A004C1529 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B9C5536419D5313A004C1529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B9C5536A19D5313A004C1529 /* AutoBlueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoBlueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9C5536F19D5313A004C1529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9C5537019D5313A004C1529 /* AutoBlueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoBlueTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9C5535419D5313A004C1529 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9C5536719D5313A004C1529 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B9C5534E19D5313A004C1529 = {
+			isa = PBXGroup;
+			children = (
+				B9C5535919D5313A004C1529 /* AutoBlue */,
+				B9C5536D19D5313A004C1529 /* AutoBlueTests */,
+				B9C5535819D5313A004C1529 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B9C5535819D5313A004C1529 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5535719D5313A004C1529 /* AutoBlue.app */,
+				B9C5536A19D5313A004C1529 /* AutoBlueTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9C5535919D5313A004C1529 /* AutoBlue */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5535E19D5313A004C1529 /* AppDelegate.h */,
+				B9C5535F19D5313A004C1529 /* AppDelegate.m */,
+				B9C5536119D5313A004C1529 /* Images.xcassets */,
+				B9C5536319D5313A004C1529 /* MainMenu.xib */,
+				B9C5535A19D5313A004C1529 /* Supporting Files */,
+			);
+			path = AutoBlue;
+			sourceTree = "<group>";
+		};
+		B9C5535A19D5313A004C1529 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5535B19D5313A004C1529 /* Info.plist */,
+				B9C5535C19D5313A004C1529 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9C5536D19D5313A004C1529 /* AutoBlueTests */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5537019D5313A004C1529 /* AutoBlueTests.m */,
+				B9C5536E19D5313A004C1529 /* Supporting Files */,
+			);
+			path = AutoBlueTests;
+			sourceTree = "<group>";
+		};
+		B9C5536E19D5313A004C1529 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5536F19D5313A004C1529 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9C5535619D5313A004C1529 /* AutoBlue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9C5537419D5313A004C1529 /* Build configuration list for PBXNativeTarget "AutoBlue" */;
+			buildPhases = (
+				B9C5535319D5313A004C1529 /* Sources */,
+				B9C5535419D5313A004C1529 /* Frameworks */,
+				B9C5535519D5313A004C1529 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoBlue;
+			productName = AutoBlue;
+			productReference = B9C5535719D5313A004C1529 /* AutoBlue.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B9C5536919D5313A004C1529 /* AutoBlueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9C5537719D5313A004C1529 /* Build configuration list for PBXNativeTarget "AutoBlueTests" */;
+			buildPhases = (
+				B9C5536619D5313A004C1529 /* Sources */,
+				B9C5536719D5313A004C1529 /* Frameworks */,
+				B9C5536819D5313A004C1529 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9C5536C19D5313A004C1529 /* PBXTargetDependency */,
+			);
+			name = AutoBlueTests;
+			productName = AutoBlueTests;
+			productReference = B9C5536A19D5313A004C1529 /* AutoBlueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B9C5534F19D5313A004C1529 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "MPV Software, LLC";
+				TargetAttributes = {
+					B9C5535619D5313A004C1529 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					B9C5536919D5313A004C1529 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = B9C5535619D5313A004C1529;
+					};
+				};
+			};
+			buildConfigurationList = B9C5535219D5313A004C1529 /* Build configuration list for PBXProject "AutoBlue" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B9C5534E19D5313A004C1529;
+			productRefGroup = B9C5535819D5313A004C1529 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9C5535619D5313A004C1529 /* AutoBlue */,
+				B9C5536919D5313A004C1529 /* AutoBlueTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9C5535519D5313A004C1529 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9C5536219D5313A004C1529 /* Images.xcassets in Resources */,
+				B9C5536519D5313A004C1529 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9C5536819D5313A004C1529 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B9C5535319D5313A004C1529 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9C5536019D5313A004C1529 /* AppDelegate.m in Sources */,
+				B9C5535D19D5313A004C1529 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9C5536619D5313A004C1529 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9C5537119D5313A004C1529 /* AutoBlueTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9C5536C19D5313A004C1529 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9C5535619D5313A004C1529 /* AutoBlue */;
+			targetProxy = B9C5536B19D5313A004C1529 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B9C5536319D5313A004C1529 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9C5536419D5313A004C1529 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B9C5537219D5313A004C1529 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B9C5537319D5313A004C1529 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B9C5537519D5313A004C1529 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AutoBlue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B9C5537619D5313A004C1529 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AutoBlue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B9C5537819D5313A004C1529 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AutoBlueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoBlue.app/Contents/MacOS/AutoBlue";
+			};
+			name = Debug;
+		};
+		B9C5537919D5313A004C1529 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AutoBlueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoBlue.app/Contents/MacOS/AutoBlue";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9C5535219D5313A004C1529 /* Build configuration list for PBXProject "AutoBlue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9C5537219D5313A004C1529 /* Debug */,
+				B9C5537319D5313A004C1529 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9C5537419D5313A004C1529 /* Build configuration list for PBXNativeTarget "AutoBlue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9C5537519D5313A004C1529 /* Debug */,
+				B9C5537619D5313A004C1529 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B9C5537719D5313A004C1529 /* Build configuration list for PBXNativeTarget "AutoBlueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9C5537819D5313A004C1529 /* Debug */,
+				B9C5537919D5313A004C1529 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B9C5534F19D5313A004C1529 /* Project object */;
+}
