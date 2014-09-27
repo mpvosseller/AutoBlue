@@ -47,12 +47,12 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
     self = [super init];
     if (self) {
         CGDisplayRegisterReconfigurationCallback(displayChanged, NULL);
+        [self updateBluetoothState];
     }
     return self;
 }
 
-- (BOOL) isConnectedToExternalDisplay {
-    
+- (BOOL) isConnectedToExternalDisplay {    
     uint32_t maxDisplays = 100;
     CGDirectDisplayID onlineDisplays[maxDisplays];
     uint32_t displayCount;
@@ -76,9 +76,9 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
 
 - (void) setBluetoothEnabled:(BOOL)bluetoothEnabled {
     if (bluetoothEnabled) {
-        NSLog(@"Turning Bluetooth ON");
+        NSLog(@"Detected external display. Turning Bluetooth ON.");
     } else {
-        NSLog(@"Turning Bluetooth OFF");
+        NSLog(@"No external displays. Turning Bluetooth OFF.");
     }
     IOBluetoothPreferenceSetControllerPowerState(bluetoothEnabled ? 1 : 0);
     usleep(2500000);
