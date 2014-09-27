@@ -16,10 +16,12 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    NSLog(@"Launching.");
     [AutoBlue setup];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
+    NSLog(@"Terminating.");
 }
 
 @end
