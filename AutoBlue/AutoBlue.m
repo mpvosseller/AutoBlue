@@ -55,7 +55,6 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
     if (self) {
         CGDisplayRegisterReconfigurationCallback(displayChanged, NULL);
         [self updateBluetoothState];
-        self.enabled = YES;
         [self configureStatusBarMenu];
     }
     return self;
@@ -119,6 +118,19 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
 
 - (IBAction) exitButtonPressed {
     exit(0);
+}
+
+- (void) setEnabled:(BOOL)enabled {
+    BOOL disabled = !enabled;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:disabled forKey:@"com.mpvsoftware.autoblue.disabled"];
+    [defaults synchronize];
+}
+
+- (BOOL) enabled {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL disabled = [defaults boolForKey:@"com.mpvsoftware.autoblue.disabled"];
+    return !disabled;
 }
 
 - (BOOL) isConnectedToExternalDisplay {    
