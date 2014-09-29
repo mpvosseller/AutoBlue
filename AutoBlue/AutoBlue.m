@@ -71,7 +71,7 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
     self.statusMenuItem = [[NSMenuItem alloc] initWithTitle:@"" action:nil keyEquivalent:@""];
     self.toggleMenuItem = [[NSMenuItem alloc] initWithTitle:@"" action:@selector(toggleButtonPressed) keyEquivalent:@""];
     self.toggleMenuItem.target = self;
-    NSMenuItem *exitMenuItem = [[NSMenuItem alloc] initWithTitle:@"Exit" action:@selector(exitButtonPressed) keyEquivalent:@""];
+    NSMenuItem *exitMenuItem = [[NSMenuItem alloc] initWithTitle:@"Quit AutoBlue" action:@selector(exitButtonPressed) keyEquivalent:@""];
     exitMenuItem.target = self;
     
     [menu addItem:self.statusMenuItem];
