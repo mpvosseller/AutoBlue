@@ -13,6 +13,10 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AutoBlue()
+@property (nonatomic) NSStatusItem *statusItem;
+@property (nonatomic) NSMenuItem *statusMenuItem;
+@property (nonatomic) NSMenuItem *toggleMenuItem;
+@property (nonatomic) BOOL enabled;
 @property (nonatomic, readonly) BOOL isConnectedToExternalDisplay;
 @property (nonatomic) BOOL bluetoothEnabled;
 - (void) updateBluetoothState;
@@ -48,8 +52,52 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
     if (self) {
         CGDisplayRegisterReconfigurationCallback(displayChanged, NULL);
         [self updateBluetoothState];
+        self.enabled = YES;
+        [self configureStatusBarMenu];
     }
     return self;
+}
+
+- (void) configureStatusBarMenu {
+    
+    NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Menu"];
+    
+    self.statusMenuItem = [[NSMenuItem alloc] initWithTitle:@"AutoBlue: On" action:nil keyEquivalent:@""];
+    self.toggleMenuItem = [[NSMenuItem alloc] initWithTitle:@"Turn AutoBlue Off" action:@selector(toggleButtonPressed) keyEquivalent:@""];
+    self.toggleMenuItem.target = self;
+    NSMenuItem *exitMenuItem = [[NSMenuItem alloc] initWithTitle:@"Exit" action:@selector(exitButtonPressed) keyEquivalent:@""];
+    exitMenuItem.target = self;
+    
+    [menu addItem:self.statusMenuItem];
+    [menu addItem:self.toggleMenuItem];
+    [menu addItem:[NSMenuItem separatorItem]];
+    [menu addItem:exitMenuItem];
+    
+    NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
+    self.statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
+    [self.statusItem setTitle:@"AutoBlue"];
+    [self.statusItem setHighlightMode:YES];
+    [self.statusItem setMenu:menu];
+    
+    [self refreshStatusBarMenu];
+}
+
+- (void) refreshStatusBarMenu {
+    self.statusMenuItem.title = self.enabled ? @"AutoBlue: On" : @"AutoBlue: Off";
+    self.toggleMenuItem.title = self.enabled ? @"Turn AutoBlue Off" : @"Turn AutoBlue On";    
+}
+
+- (IBAction) toggleButtonPressed {
+    self.enabled = !self.enabled;
+    [self refreshStatusBarMenu];
+    
+    if (self.enabled) {
+        [self updateBluetoothState];
+    }
+}
+
+- (IBAction) exitButtonPressed {
+    exit(0);
 }
 
 - (BOOL) isConnectedToExternalDisplay {    
@@ -85,10 +133,14 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
 }
 
 - (void) updateBluetoothState {
-    if (self.isConnectedToExternalDisplay && !self.bluetoothEnabled) {
-        self.bluetoothEnabled = YES;
-    } else if (!self.isConnectedToExternalDisplay && self.bluetoothEnabled) {
-        self.bluetoothEnabled = NO;
+    if (self.enabled) {
+        if (self.isConnectedToExternalDisplay && !self.bluetoothEnabled) {
+            self.bluetoothEnabled = YES;
+            [self refreshStatusBarMenu];
+        } else if (!self.isConnectedToExternalDisplay && self.bluetoothEnabled) {
+            self.bluetoothEnabled = NO;
+            [self refreshStatusBarMenu];
+        }
     }
 }
 
