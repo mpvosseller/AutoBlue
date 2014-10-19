@@ -64,12 +64,17 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
     self.statusMenuItem = [[NSMenuItem alloc] initWithTitle:@"" action:nil keyEquivalent:@""];
     self.toggleMenuItem = [[NSMenuItem alloc] initWithTitle:@"" action:@selector(toggleButtonPressed) keyEquivalent:@""];
     self.toggleMenuItem.target = self;
+    
+    NSMenuItem *aboutMenuItem = [[NSMenuItem alloc] initWithTitle:@"About AutoBlue" action:@selector(aboutButtonPressed) keyEquivalent:@""];
+    aboutMenuItem.target = self;
+    
     NSMenuItem *exitMenuItem = [[NSMenuItem alloc] initWithTitle:@"Quit AutoBlue" action:@selector(exitButtonPressed) keyEquivalent:@""];
     exitMenuItem.target = self;
     
     [menu addItem:self.statusMenuItem];
     [menu addItem:self.toggleMenuItem];
     [menu addItem:[NSMenuItem separatorItem]];
+    [menu addItem:aboutMenuItem];
     [menu addItem:exitMenuItem];
     
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
@@ -94,6 +99,17 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
     if (self.enabled) {
         [self updateBluetoothState];
     }
+}
+
+- (void) aboutButtonPressed {
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = [NSString stringWithFormat:@"AutoBlue"];
+    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString* versionStr = [infoDict objectForKey:@"CFBundleVersion"];
+    NSString *informativeText = [NSString stringWithFormat:@"Version %@\nMPV Software, LLC\nCopyright © 2014", versionStr];
+    alert.informativeText = informativeText;
+    [alert addButtonWithTitle:@"OK"];
+    [alert runModal];
 }
 
 - (IBAction) exitButtonPressed {
