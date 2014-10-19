@@ -14,9 +14,6 @@
 
 @interface AutoBlue()
 @property (nonatomic) NSStatusItem *statusItem;
-@property (nonatomic) NSImage *blackStatusItemImage;
-@property (nonatomic) NSImage *lightGrayStatusItemImage;
-@property (nonatomic) NSImage *whiteStatusItemImage;
 @property (nonatomic) NSMenuItem *statusMenuItem;
 @property (nonatomic) NSMenuItem *toggleMenuItem;
 @property (nonatomic) BOOL enabled;
@@ -62,10 +59,6 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
 
 - (void) configureStatusBarMenu {
     
-    self.blackStatusItemImage = [self statusItemImageWithTintColor:[NSColor blackColor]];
-    self.lightGrayStatusItemImage = [self statusItemImageWithTintColor:[NSColor lightGrayColor]];
-    self.whiteStatusItemImage = [self statusItemImageWithTintColor:[NSColor whiteColor]];
-    
     NSMenu *menu = [[NSMenu alloc] initWithTitle:@""];
     
     self.statusMenuItem = [[NSMenuItem alloc] initWithTitle:@"" action:nil keyEquivalent:@""];
@@ -81,7 +74,7 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
     
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     self.statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
-    self.statusItem.alternateImage = self.whiteStatusItemImage;
+    self.statusItem.image = [NSImage imageNamed:@"StatusItem"];
     [self.statusItem setHighlightMode:YES];
     [self.statusItem setMenu:menu];
     
@@ -89,7 +82,7 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
 }
 
 - (void) refreshStatusBarMenu {
-    self.statusItem.image = self.enabled ? self.blackStatusItemImage : self.lightGrayStatusItemImage;
+    self.statusItem.button.appearsDisabled = self.enabled ? NO : YES;
     self.statusMenuItem.title = self.enabled ? @"AutoBlue: On" : @"AutoBlue: Off";
     self.toggleMenuItem.title = self.enabled ? @"Turn AutoBlue Off" : @"Turn AutoBlue On";    
 }
@@ -102,19 +95,6 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
         [self updateBluetoothState];
     }
 }
-
-- (NSImage*) statusItemImageWithTintColor:(NSColor*)color {
-    NSImage *image = [NSImage imageNamed:@"StatusItem"];
-    image = [image copy];
-    NSSize imageSize = [image size];
-    NSRect iconRect = {NSZeroPoint, imageSize};
-    [image lockFocus];
-    [[color colorWithAlphaComponent: 1] set];
-    NSRectFillUsingOperation(iconRect, NSCompositeSourceAtop);
-    [image unlockFocus];
-    return image;
-}
-
 
 - (IBAction) exitButtonPressed {
     exit(0);
