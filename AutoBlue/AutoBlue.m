@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <IOBluetooth/IOBluetooth.h>
 #import <Cocoa/Cocoa.h>
+#import "AboutWindowController.h"
 
 @interface AutoBlue()
 @property (nonatomic) NSStatusItem *statusItem;
@@ -19,6 +20,7 @@
 @property (nonatomic) BOOL enabled;
 @property (nonatomic, readonly) BOOL isConnectedToExternalDisplay;
 @property (nonatomic) BOOL bluetoothEnabled;
+@property (nonatomic) AboutWindowController *aboutWindowController;
 - (void) updateBluetoothState;
 + (AutoBlue*) sharedAutoBlue;
 @end
@@ -68,15 +70,11 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
     NSMenuItem *aboutMenuItem = [[NSMenuItem alloc] initWithTitle:@"About AutoBlue" action:@selector(aboutButtonPressed) keyEquivalent:@""];
     aboutMenuItem.target = self;
     
-    NSMenuItem *exitMenuItem = [[NSMenuItem alloc] initWithTitle:@"Quit AutoBlue" action:@selector(exitButtonPressed) keyEquivalent:@""];
-    exitMenuItem.target = self;
-    
     [menu addItem:self.statusMenuItem];
     [menu addItem:self.toggleMenuItem];
     [menu addItem:[NSMenuItem separatorItem]];
     [menu addItem:aboutMenuItem];
-    [menu addItem:exitMenuItem];
-    
+
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     self.statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
     self.statusItem.image = [NSImage imageNamed:@"StatusItem"];
@@ -102,18 +100,11 @@ static void displayChanged(CGDirectDisplayID displayID, CGDisplayChangeSummaryFl
 }
 
 - (void) aboutButtonPressed {
-    NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = [NSString stringWithFormat:@"AutoBlue"];
-    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString* versionStr = [infoDict objectForKey:@"CFBundleVersion"];
-    NSString *informativeText = [NSString stringWithFormat:@"Version %@\nMPV Software, LLC\nCopyright © 2014", versionStr];
-    alert.informativeText = informativeText;
-    [alert addButtonWithTitle:@"OK"];
-    [alert runModal];
-}
-
-- (IBAction) exitButtonPressed {
-    exit(0);
+    if (self.aboutWindowController == nil) {
+        self.aboutWindowController = [[AboutWindowController alloc] init];
+    }
+    [self.aboutWindowController showWindow:self];
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
 - (void) setEnabled:(BOOL)enabled {

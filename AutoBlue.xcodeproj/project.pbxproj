@@ -13,6 +13,8 @@
 		B9C5536519D5313A004C1529 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C5536319D5313A004C1529 /* MainMenu.xib */; };
 		B9C5537119D5313A004C1529 /* AutoBlueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5537019D5313A004C1529 /* AutoBlueTests.m */; };
 		B9C5537C19D53243004C1529 /* AutoBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5537B19D53243004C1529 /* AutoBlue.m */; };
+		B9DA773A19F4840C00E957AE /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DA773819F4840C00E957AE /* AboutWindowController.m */; };
+		B9DA773B19F4840C00E957AE /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DA773919F4840C00E957AE /* AboutWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 		B9C5537019D5313A004C1529 /* AutoBlueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoBlueTests.m; sourceTree = "<group>"; };
 		B9C5537A19D53243004C1529 /* AutoBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoBlue.h; sourceTree = "<group>"; };
 		B9C5537B19D53243004C1529 /* AutoBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoBlue.m; sourceTree = "<group>"; };
+		B9DA773719F4840C00E957AE /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
+		B9DA773819F4840C00E957AE /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
+		B9DA773919F4840C00E957AE /* AboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +84,15 @@
 		B9C5535919D5313A004C1529 /* AutoBlue */ = {
 			isa = PBXGroup;
 			children = (
+				B9C5536119D5313A004C1529 /* Images.xcassets */,
+				B9C5536319D5313A004C1529 /* MainMenu.xib */,
 				B9C5535E19D5313A004C1529 /* AppDelegate.h */,
 				B9C5535F19D5313A004C1529 /* AppDelegate.m */,
 				B9C5537A19D53243004C1529 /* AutoBlue.h */,
 				B9C5537B19D53243004C1529 /* AutoBlue.m */,
-				B9C5536119D5313A004C1529 /* Images.xcassets */,
-				B9C5536319D5313A004C1529 /* MainMenu.xib */,
+				B9DA773719F4840C00E957AE /* AboutWindowController.h */,
+				B9DA773819F4840C00E957AE /* AboutWindowController.m */,
+				B9DA773919F4840C00E957AE /* AboutWindowController.xib */,
 				B9C5535A19D5313A004C1529 /* Supporting Files */,
 			);
 			path = AutoBlue;
@@ -196,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9DA773B19F4840C00E957AE /* AboutWindowController.xib in Resources */,
 				B9C5536219D5313A004C1529 /* Images.xcassets in Resources */,
 				B9C5536519D5313A004C1529 /* MainMenu.xib in Resources */,
 			);
@@ -216,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9C5537C19D53243004C1529 /* AutoBlue.m in Sources */,
+				B9DA773A19F4840C00E957AE /* AboutWindowController.m in Sources */,
 				B9C5536019D5313A004C1529 /* AppDelegate.m in Sources */,
 				B9C5535D19D5313A004C1529 /* main.m in Sources */,
 			);
