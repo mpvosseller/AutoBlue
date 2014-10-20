@@ -7,6 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="AboutWindowController">
             <connections>
                 <outlet property="detailTextField" destination="v5Z-Ze-gbb" id="5X3-Xk-gcM"/>
+                <outlet property="supportButton" destination="1fU-ga-cWl" id="igA-bS-8lM"/>
                 <outlet property="titleTextField" destination="sMs-um-up6" id="rG1-lT-eWk"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -16,18 +17,18 @@
         <window title="AutoBlue" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="320" height="165"/>
+            <rect key="contentRect" x="196" y="240" width="320" height="199"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1c-jV-tyq">
-                        <rect key="frame" x="20" y="81" width="64" height="64"/>
+                        <rect key="frame" x="20" y="115" width="64" height="64"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Logo" id="GUj-oH-azW"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sMs-um-up6">
-                        <rect key="frame" x="90" y="128" width="64" height="17"/>
+                        <rect key="frame" x="90" y="162" width="64" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="AutoBlue" id="j43-Uz-4qk">
                             <font key="font" metaFont="systemBold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -35,7 +36,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-Ze-gbb">
-                        <rect key="frame" x="90" y="69" width="140" height="51"/>
+                        <rect key="frame" x="90" y="103" width="140" height="51"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="MQ5-AL-QyQ">
                             <font key="font" metaFont="system"/>
                             <string key="title">Version 0.0.0.0
@@ -58,6 +59,16 @@ DQ
                             <action selector="handleOKButtonPressed:" target="-2" id="Xij-IC-RDf"/>
                         </connections>
                     </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fU-ga-cWl">
+                        <rect key="frame" x="92" y="63" width="152" height="32"/>
+                        <buttonCell key="cell" type="bevel" title="mpv@mpvsoftware.com" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="Og9-vd-8GI">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="handleSupportButtonPressed:" target="-2" id="yNA-b9-R8Z"/>
+                        </connections>
+                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jjA-W5-wY5">
                         <rect key="frame" x="264" y="21" width="36" height="17"/>
                         <buttonCell key="cell" type="inline" title="Quit" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="6fx-pO-LeC">
@@ -73,7 +84,7 @@ DQ
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="249" y="258.5"/>
+            <point key="canvasLocation" x="249" y="275.5"/>
         </window>
     </objects>
     <resources>

@@ -11,6 +11,7 @@
 @interface AboutWindowController ()
 @property (nonatomic) IBOutlet NSTextField *titleTextField;
 @property (nonatomic) IBOutlet NSTextField *detailTextField;
+@property (nonatomic) IBOutlet NSButton *supportButton;
 @end
 
 @implementation AboutWindowController
@@ -33,6 +34,12 @@
     NSString* versionStr = [infoDict objectForKey:@"CFBundleVersion"];
     NSString *informativeText = [NSString stringWithFormat:@"Version %@\nMPV Software, LLC\nCopyright © 2014", versionStr];
     self.detailTextField.stringValue = informativeText;
+    
+    NSColor *color = [NSColor blueColor];
+    NSMutableAttributedString *colorTitle = [[NSMutableAttributedString alloc] initWithAttributedString:[self.supportButton attributedTitle]];
+    NSRange titleRange = NSMakeRange(0, [colorTitle length]);
+    [colorTitle addAttribute:NSForegroundColorAttributeName value:color range:titleRange];
+    [self.supportButton setAttributedTitle:colorTitle];
 }
 
 -(IBAction)showWindow:(id)sender {
@@ -46,6 +53,19 @@
 
 - (IBAction)exitButtonPressed:(id)sender {
     exit(0);
+}
+
+- (IBAction)handleSupportButtonPressed:(id)sender {
+    
+    NSString *supportEmailAddress = @"mpv@mpvsoftware.com";
+    
+    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *versionStr = [infoDict objectForKey:@"CFBundleVersion"];
+    NSString *subjectStr = [NSString stringWithFormat:@"AutoBlue Support Version %@", versionStr];
+    subjectStr = [subjectStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *mailLinkStr = [NSString stringWithFormat:@"mailto:%@?subject=%@", supportEmailAddress, subjectStr];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:mailLinkStr]];
 }
 
 @end
