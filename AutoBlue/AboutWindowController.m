@@ -23,9 +23,9 @@
     return self;
 }
 
-- (void)windowDidLoad {
-    [super windowDidLoad];
-    
+- (void) awakeFromNib {
+    [super awakeFromNib];
+
     self.titleTextField.stringValue = @"AutoBlue";
     
     NSAlert *alert = [[NSAlert alloc] init];
